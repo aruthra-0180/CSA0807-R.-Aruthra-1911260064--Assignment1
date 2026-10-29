@@ -1,0 +1,59 @@
+   # TASK 1 – Understand the Problem and Identify the Data
+
+## 1. Inputs
+
+- **Farmer ID:** A string (`str`) used to identify each farmer.
+- **Litres:** A decimal number (`float`) representing the quantity of milk supplied.
+- **Fat percentage:** A decimal number (`float`) representing the fat content of milk.
+- **SNF percentage:** A decimal number (`float`) representing solids-not-fat content.
+- **Shift:** A string (`str`) indicating morning or evening.
+
+## 2. Outputs
+
+- **Rate per litre:** The price calculated for one litre of milk.
+- **Payment amount:** The total payment for the supplied milk.
+- **Ten-day total:** The total payment for a farmer over ten days.
+
+## 3. Constants
+
+- `BASE_RATE = 30.00`
+- `FAT_STEP_VALUE = 0.40`
+- `SNF_STEP_VALUE = 0.30`
+- `STANDARD_FAT = 3.5`
+- `STANDARD_SNF = 8.5`
+
+These values are constants because they remain unchanged during a normal calculation. If rates change, they can be updated in one place.
+
+## 4. Data Types
+
+- `int`: Used for whole-number values such as farmer count.
+- `float`: Used for milk quantity and percentages.
+- `str`: Used for farmer ID and shift.
+- `bool`: Used to check whether an entry is valid.
+- `list`: Used to store multiple farmer entries.
+
+## 5. Validation Rules
+
+- Milk quantity must not be negative.
+- Fat percentage must be between 2.0% and 7.0%.
+- SNF percentage must be a valid, non-negative number.
+- Farmer ID must not be empty.
+- Shift must be either morning or evening.
+- The payment must be calculated using the correct rate and rounded to two decimal places.
+
+## 6. Assumptions
+
+- Each farmer may supply milk during the morning and evening shifts.
+- The standard rate is ₹30.00 per litre at 3.5% fat and 8.5% SNF.
+- Each 0.1% change in fat changes the rate by ₹0.40.
+- Each 0.1% change in SNF changes the rate by ₹0.30.
+- Payments are calculated for ten-day periods.
+- Invalid entries are rejected before calculating payment.
+
+## 7. Alternative Concept and Complexity Analysis
+
+If separate variables were used for every farmer, such as `litres1`, `fat1`, and `snf1`, the program would become difficult to manage for 300 farmers.
+
+Instead, a list or tuple can store each farmer's details together. This makes the program easier to maintain and extend.
+
+For n farmer entries, processing all entries takes O(n) time. Storing all entries requires O(n) space. Using a list or tuple makes the program more organised and scalable.
